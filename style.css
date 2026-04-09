@@ -1,0 +1,85 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: radial-gradient(circle at bottom, #0d1b2a, #000);
+  overflow: hidden;
+  height: 100vh;
+}
+
+.night {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle, rgba(255,255,255,0.1), transparent);
+}
+
+.flowers {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+}
+
+/* Flor simples */
+.flower {
+  position: relative;
+  width: 60px;
+  height: 150px;
+}
+
+.flower__leafs {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 60px;
+}
+
+.flower__leaf {
+  width: 30px;
+  height: 30px;
+  background: pink;
+  position: absolute;
+  border-radius: 50%;
+}
+
+.flower__leaf--1 { top: 0; left: 15px; }
+.flower__leaf--2 { top: 15px; left: 0; }
+.flower__leaf--3 { top: 15px; right: 0; }
+.flower__leaf--4 { bottom: 0; left: 15px; }
+
+.flower__white-circle {
+  width: 20px;
+  height: 20px;
+  background: yellow;
+  border-radius: 50%;
+  position: absolute;
+  top: 20px;
+  left: 20px;
+}
+
+/* Caule */
+.flower__line {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 4px;
+  height: 100px;
+  background: green;
+  transform: translateX(-50%);
+}
+
+/* Animação */
+.flower {
+  animation: grow 3s ease-in-out infinite alternate;
+}
+
+@keyframes grow {
+  from { transform: scale(0.9); }
+  to { transform: scale(1.1); }
+}
